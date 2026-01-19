@@ -160,9 +160,16 @@ function renderVideo(url) {
 }
 
 function setupBackButton() {
-  document
-    .getElementById("back-to-meals-btn")
-    .addEventListener("click", ToggleSetUp);
+  const backBtn = document.getElementById("back-to-meals-btn");
+  if (!backBtn) return;
+
+  backBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    history.pushState(null, null, "#recipes");
+
+    ToggleSetUp();
+  });
 }
 
 function enableLogButton() {
