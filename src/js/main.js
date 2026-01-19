@@ -6,7 +6,9 @@ import { SetHeaderInfo } from "./ui/common/common.js";
 import { displayMealsCategories } from "./ui/meals/mealsCategories.js";
 import { displayMealsAreas } from "./ui/meals/mealsArea.js";
 
-window.addEventListener("load", hideLoadingOverlay);
+window.addEventListener("load", () => {
+  setTimeout(() => hideLoadingOverlay(), 1000);
+});
 
 const navLinks = document.querySelectorAll(".nav-link");
 const sidebarOverlay = document.getElementById("sidebar-overlay");
