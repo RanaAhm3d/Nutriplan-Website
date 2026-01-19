@@ -39,7 +39,7 @@ export async function displayRecipes(
                 onclick="GetRecipeDetails(this, '${recipe?.id}')"
               class="recipe-card bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer group"
               data-meal-id="${recipe?.id}"
-              data-target="meal/${recipe.name.replace(" ", "-").toLowerCase()}"
+              data-target="meal/${recipe.name.replaceAll(" ", "-").toLowerCase()}"
             >
               <div class="relative h-48 overflow-hidden">
                 <img
